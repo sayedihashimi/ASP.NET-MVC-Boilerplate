@@ -1,0 +1,7 @@
+configuration: Release
+
+build_script:
+  - ps: .\build.ps1
+
+artifacts:
+  - path: '**\*.vsix'
