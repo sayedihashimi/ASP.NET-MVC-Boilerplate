@@ -31,4 +31,5 @@ function EnsurePsbuildInstlled{
 
 # begin script
 EnsurePsbuildInstlled
-Invoke-MSBuild -projectsToBuild (Join-Path $scriptDir 'Source\Boilerplate.Vsix\Boilerplate.Vsix.csproj') -visualStudioVersion 14.0 -properties @{'DeployExtension'='false'}
+&nuget restore .\Source\Solution.sln
+Invoke-MSBuild -projectsToBuild '.\Source\Boilerplate.Vsix\Boilerplate.Vsix.csproj' -visualStudioVersion 14.0 -properties @{'DeployExtension'='false'}
